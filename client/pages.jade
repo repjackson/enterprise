@@ -2,16 +2,7 @@ template(name='type')
     +Template.dynamic template=delta_type
 
 
-template(name='karma')
-    .ui.stackable.padded.grid
-        .row
-            .four.wide.column
-            .twelve.wide.column
-                .ui.header karma
-                .ui.header my karma #{currentUser.karma}
-    
-            
-template(name='inbox')
+template(name='mail')
     .ui.stackable.padded.grid
         .row
             .four.wide.column
@@ -28,22 +19,8 @@ template(name='alerts')
             .twelve.wide.column
                 .ui.header 
                     i.bell.icon
-        |alerts
+        |Alerts
     
-    
-template(name='shop')
-    .ui.stackable.padded.grid
-        .row
-            .four.wide.column
-                .ui.header 
-                    i.tasks.icon
-                    | shop
-                if dark_side
-                    .ui.header get rich or die trying
-                else
-                    .ui.header building the share economy
-                +add_type_button type='product'
-            .twelve.wide.column
     
     
 template(name='chat')

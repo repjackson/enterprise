@@ -1,29 +1,40 @@
-template(name='enter')
+template(name='login')
     .ui.padded.stackable.grid
         .centered.row
             .ten.wide.center.aligned.column
-                if dark_side
-                    h1.black_bat.logo.invert_class
-                        |abandon hope all ye who enter here
-                else 
-                    h1.ui.header
-                        |welcome to the dao
-                if message
-                    h4.ui.center.aligned.header #{message}
-                .ui.fluid.input(class=login_class)
+                h1.ui.header
+                    |Log In
+                .ui.fluid.icon.input(class=login_class)
+                    i.user.icon
                     input.username(type='text' placeholder='username')
-                .ui.fluid.input(class=login_class)
+                .ui.fluid.icon.input(class=login_class)
+                    i.lock.icon
                     input.password(type='password' placeholder='password')
-                .ui.fluid.large.button.enter(class=enter_class)
-                    if registering
-                        i.plus.icon
-                        |#{username}
-                    else
-                        i.play.icon
-                        | #{username}
+                .ui.fluid.large.button.login(class=enter_class title='login')
+                    i.play.icon
+                    | #{username}
+                        
+                a(href='/register') Register
+                        
+                        
+                        
+template(name='register')
+    .ui.padded.stackable.grid
         .centered.row
-            .ten.wide.column
-                .ui.fluid.button.new_demo
-                    i.user.secret.icon
-                    | anon
-                
+            .ten.wide.center.aligned.column
+                h1.ui.header
+                    |Register
+                .ui.fluid.icon.input(class=login_class)
+                    i.user.icon
+                    input.username(type='text' placeholder='username')
+                .ui.fluid.icon.input(class=login_class)
+                    i.lock.icon
+                    input.password(type='password' placeholder='password')
+                .ui.fluid.large.button.register(class=enter_class title='register')
+                    i.plus.icon
+                    |#{username}
+                        
+                a(href='/login') Login
+                        
+                        
+                        

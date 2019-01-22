@@ -59,7 +59,7 @@
     "default": true,
     "duo": false,
     "fixed": false,
-    "flat": false,
+    "flat": true,
     "github": false,
     "gmail": false,
     "instagram": false,
@@ -71,6 +71,6 @@
     "rtl": false,
     "striped": false,
     "timeline": false,
-    "twitter": false
+    "twitter": true
   }
 }

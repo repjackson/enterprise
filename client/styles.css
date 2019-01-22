@@ -1,9 +1,9 @@
 body {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Railway', sans-serif !important;
   /*filter: invert(100%);*/
   /*font-size: 150% !important;*/
   /*line-height: 200% !important;*/
-  /*background: grey !important*/
+  background: #f2f7f8 !important
 }
 
 
@@ -96,7 +96,7 @@ body {
 }
 
 .ui.header{
-  font-family: 'Ubuntu', sans-serif !important;
+  font-family: 'Railway', sans-serif !important;
 }
 #nav {
   background: rgba(0,0,0,.1) !important;

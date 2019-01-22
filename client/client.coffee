@@ -1,7 +1,5 @@
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
-Session.setDefault 'invert', false
-
 
 @selected_tags = new ReactiveArray []
 @selected_usernames = new ReactiveArray []
@@ -12,23 +10,19 @@ Session.setDefault 'invert', false
 
 Template.registerHelper 'dev', () -> Meteor.isDevelopment
 
-Template.registerHelper 'dark_side', () -> Session.equals('invert',true)
-
 Template.registerHelper 'doc', () -> Docs.findOne FlowRouter.getParam('doc_id')
 
-
-Template.registerHelper 'invert_class', () -> if Session.equals('invert',true) then 'inverted' else ''
 
 Template.registerHelper 'nl2br', (text)->
     nl2br = (text + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + '<br>' + '$2')
     new Spacebars.SafeString(nl2br)
 
         
-Template.delta.onCreated ->
+Template.home.onCreated ->
     @autorun -> Meteor.subscribe('tags', selected_tags.array(), selected_usernames.array())
     @autorun -> Meteor.subscribe('docs', selected_tags.array(), selected_usernames.array())
 
-Template.delta.helpers
+Template.home.helpers
     selected_tags: -> selected_tags.list()
 
     global_tags: ->
@@ -45,7 +39,7 @@ Template.delta.helpers
     selected_usernames: -> selected_usernames.list()
 
     
-Template.delta.events
+Template.home.events
     'click .select_tag': -> selected_tags.push @name
     'click .unselect_tag': -> selected_tags.remove @valueOf()
     'click #clear_tags': -> selected_tags.clear()
